@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* ===== Navbar (barra de título) ===== */
+.navbar {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 16px 30px;
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Submenu (barra de navegación) ===== */
+.submenu {
+    background-color: #3c3c3c;
+    padding: 0 30px;
+}
+
+.submenu .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.submenu .menu li {
+    color: #ddd;
+    border-bottom: 3px solid transparent;
+}
+
+.submenu .menu li.activo,
+.submenu .menu li:hover {
+    color: #fff;
+    border-bottom-color: #3ba55d;
+}
+
+.submenu .menu li a {
+    display: block;
+    padding: 12px 4px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submenu .flecha {
+    font-size: 10px;
+}
+
+/* ===== Contenedor principal ===== */
+.contenedor {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ===== Panel del formulario ===== */
+.panel-formulario {
+    background-color: #fff;
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.panel-formulario .titulo {
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.panel-formulario form {
+    padding: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.campo input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #3ba55d;
+    background-color: #fff;
+}
+
+.fila-doble {
+    display: flex;
+    gap: 15px;
+}
+
+.fila-doble .campo {
+    flex: 1;
+}
+
+.btn-guardar {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    padding: 10px 26px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-guardar:hover {
+    background-color: #3ba55d;
+}
+
+/* ===== Panel de la tabla ===== */
+.panel-tabla {
+    background-color: #fff;
+    flex: 2;
+    min-width: 500px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: #3c3c3c;
+    color: #fff;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px 18px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+thead th:last-child {
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+tbody tr:hover {
+    background-color: #f0f7f2;
+}
+
+.acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-accion {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.btn-editar {
+    background-color: #3ba55d;
+}
+
+.btn-editar:hover {
+    background-color: #2f8a4b;
+}
+
+.btn-eliminar {
+    background-color: #d9534f;
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c;
+}
+
+/* ===== Paginación ===== */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 18px;
+    flex-wrap: wrap;
+}
+
+.paginacion a,
+.paginacion span {
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3c3c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 0 6px;
+}
+
+.paginacion a:hover {
+    background-color: #1e1e1e;
+}
+
+.paginacion .activa {
+    background-color: #3ba55d;
+}
+
+.sin-registros {
+    padding: 20px;
+    text-align: center;
+    color: #888;
+}
+
+/* ===== Sistema de Facturación ===== */
+.panel-factura {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.factura-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3ba55d;
+    color: #fff;
+    padding: 14px 20px;
+}
+
+.factura-header .titulo {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.factura-header .numero-factura {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.factura-header .numero-factura span#numeroFactura {
+    background-color: #fdf3d8;
+    color: #333;
+    padding: 5px 14px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.factura-botones {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+}
+
+.btn-factura {
+    background-color: #3c3c3c;
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-factura:hover {
+    background-color: #1e1e1e;
+}
+
+.btn-guardar-factura {
+    background-color: #3ba55d;
+}
+
+.btn-guardar-factura:hover {
+    background-color: #2f8a4b;
+}
+
+.factura-cuerpo {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px 20px;
+    flex-wrap: wrap;
+}
+
+.factura-tabla-wrap {
+    flex: 3;
+    min-width: 400px;
+}
+
+#tablaFactura {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tablaFactura thead tr {
+    background-color: #3c3c3c;
+    color: #fff;
+}
+
+#tablaFactura th,
+#tablaFactura td {
+    padding: 10px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+#tablaFactura .col-precio,
+#tablaFactura .col-total,
+#tablaFactura .col-cantidad {
+    text-align: right;
+}
+
+.btn-quitar {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-quitar:hover {
+    background-color: #c9302c;
+}
+
+.factura-totales {
+    flex: 1;
+    min-width: 220px;
+}
+
+.campo-total {
+    margin-bottom: 12px;
+}
+
+.campo-total label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.campo-total input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #fdf3d8;
+    text-align: right;
+}
+
+.factura-secciones {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eee;
+}
+
+.seccion-caja {
+    flex: 1;
+    min-width: 320px;
+    padding-top: 20px;
+}
+
+.seccion-caja .subtitulo {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.seccion-fila {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.seccion-fila .campo {
+    flex: 1;
+    min-width: 90px;
+    margin-bottom: 0;
+}
+
+.seccion-fila .campo.descripcion {
+    flex: 2;
+    min-width: 160px;
+}
+
+.seccion-fila input[readonly] {
+    background-color: #f0f0f0;
+}
+
+/* ===== Menú desplegable (Inventario) ===== */
+.submenu .menu li.desplegable {
+    position: relative;
+    padding: 12px 4px;
+    cursor: pointer;
+}
+
+.submenu .desplegable-contenido {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #3c3c3c;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.submenu .menu li.desplegable:hover .desplegable-contenido {
+    display: block;
+}
+
+.submenu .desplegable-contenido a {
+    display: block;
+    padding: 10px 16px;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.submenu .desplegable-contenido a:hover {
+    background-color: #3ba55d;
+    color: #fff;
+}
+
+/* ===== Productos / Movimientos ===== */
+.panel-formulario .titulo.titulo-verde {
+    background-color: #3ba55d;
+    font-size: 20px;
+}
+
+.panel-tabla { overflow-x: auto; }
+
+.campo input[type="file"] { padding: 6px; background: #fff; }
+
+.campo input[readonly] { background-color: #f0f0f0; color: #555; }
+
+.nota { display: block; font-size: 12px; color: #777; margin: 6px 0 12px; }
+
+.btn-cancelar {
+    display: inline-block;
+    margin-left: 10px;
+    color: #555;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.miniatura { width: 46px; height: 46px; object-fit: cover; border-radius: 3px; border: 1px solid #ddd; display: block; }
+.miniatura-form { width: 90px; height: 90px; object-fit: cover; margin-top: 8px; border: 1px solid #ddd; border-radius: 3px; }
+.sin-imagen { color: #aaa; }
+
+.cant-entrada { color: #2f8a4b; font-weight: 600; }
+.cant-salida  { color: #c9302c; font-weight: 600; }
+
+.aviso { padding: 12px 18px; font-size: 14px; border-left: 4px solid; }
+.aviso-ok    { background: #e8f5ec; border-color: #3ba55d; color: #1f6b3a; }
+.aviso-error { background: #fbeaea; border-color: #d9534f; color: #8f2a27; }
+
+.pie-pagina {
+    background-color: #d9d9d9;
+    color: #333;
+    font-size: 13px;
+    padding: 12px 30px;
+    margin-top: 30px;
+}
